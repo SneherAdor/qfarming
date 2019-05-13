@@ -1,0 +1,21 @@
+{
+    "name": "qbytesoft/qroles",
+    "description": "The role and permission system for any multiple ACL (Access Control Level) package for Laravel.",
+    "authors": [
+        {
+            "name": "Md. Morshadun Nur",
+            "email": "me@morshadunnur.me"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Qbytesoft\\Qroles\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=5.5.0",
+        "illuminate/auth": ">= 5.0",
+        "illuminate/database": ">= 5.0",
+        "illuminate/support": ">= 5.0"
+    }
+}
