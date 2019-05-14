@@ -42,20 +42,12 @@
 
     {{-- PAGE LOADER CSS --}}
 
-    <link href="{{ asset('admin/assets/css/pageloader/preloader.min.css') }} " rel="stylesheet" type="text/css" />
+    <link href="{{ asset('admin/assets/css/pageloader/preloader.css') }} " rel="stylesheet" type="text/css" />
     
     @stack('css')
 
 </head>
 
-{{-- START PAGE LOADER --}}
-    <div id="preloader">
-            <div class="canvas">
-                <img src="{{ asset('admin/assets/img/qbytsoft_logo.png') }}" alt="logo" class="loader-logo">
-                <div class="spinner"></div>   
-            </div>
-        </div>
-{{-- END PAGE LOADER --}}
  <!-- END HEAD -->
 <body class="page-header-fixed sidemenu-closed-hidelogo page-content-white white-sidebar-color logo-green header-green">
     <div class="page-wrapper">
@@ -90,6 +82,14 @@
 
 
     </div>
+{{-- START PAGE LOADER --}}
+    <div id="preloader">
+            <div class="canvas">
+                <img src="{{ asset('admin/assets/img/qbytsoft_logo.png') }}" alt="logo" class="loader-logo">
+                <div class="spinner"></div>   
+            </div>
+        </div>
+{{-- END PAGE LOADER --}}
 
 
  <!-- start js include path -->
@@ -129,7 +129,7 @@
         <script>
             $(window).on("load", function () {
             $(".loader").fadeOut();
-            $("#preloader").delay(350).fadeOut("slow");
+            $("#preloader").delay(500).fadeOut("slow");
             });
         </script>
  {{-- PAGE LOADER JS SCRIPT END --}}
