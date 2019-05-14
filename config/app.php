@@ -165,7 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
-        Qbytesoft\Qroles\QrolesServiceProvider::class,
+        // Qbytesoft\Qroles\QrolesServiceProvider::class,
         /*
          * Application Service Providers...
          */

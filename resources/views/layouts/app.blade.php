@@ -36,11 +36,15 @@
 
     <link href="{{ asset('admin/assets/css/style.css') }} " rel="stylesheet" type="text/css" />
     <link href="{{ asset('admin/assets/css/responsive.css') }} " rel="stylesheet" type="text/css" />
- 
+
+    <!-- toastr js -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+    
+    @stack('css')
 
 </head>
  <!-- END HEAD -->
-<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white dark-sidebar-color logo-dark">
+<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white white-sidebar-color logo-green header-green">
     <div class="page-wrapper">
         <!-- start header -->
         @include('layouts.partials.topbar')
@@ -76,6 +80,8 @@
 
 
  <!-- start js include path -->
+ 
+
  <script src="{{ asset('admin/assets/plugins/jquery/jquery.min.js') }} " ></script>
  <script src="{{ asset('admin/assets/plugins/popper/popper.min.js') }} " ></script>
  <script src="{{ asset('admin/assets/plugins/jquery-blockui/jquery.blockui.min.js') }} " ></script>
@@ -84,6 +90,10 @@
  <script src="{{ asset('admin/assets/plugins/bootstrap/js/bootstrap.min.js') }} " ></script>
  <script src="{{ asset('admin/assets/plugins/sparkline/jquery.sparkline.min.js') }} " ></script>
  <script src="{{ asset('admin/assets/js/pages/sparkline/sparkline-data.js') }} " ></script>
+
+
+
+
  <!-- Common js-->
  <script src="{{ asset('admin/assets/js/app.js') }} " ></script>
  <script src="{{ asset('admin/assets/js/layout.js') }} " ></script>
@@ -100,5 +110,24 @@
  <script src="{{ asset('admin/assets/plugins/summernote/summernote.min.js') }} " ></script>
  <script src="{{ asset('admin/assets/js/pages/summernote/summernote-data.js') }} " ></script>
  <!-- end js include path -->
+
+<!-- toastr js -->
+ <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+ {!! Toastr::message() !!}
+
+ <script>
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+        toastr["error"]("{{ $error }}", 'Error', {
+        "closeButton" : true,
+        "progressBar" : true,
+        "positionClass": "toast-top-center",
+        });
+        @endforeach
+    @endif
+</script>
+
+ @stack('js')
+
 </body>
 </html>

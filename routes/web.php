@@ -16,8 +16,14 @@ Route::get('/', function () {
 });
 
 
-Route::get('/dashboard', function () {
+Route::get('admin/dashboard', function () {
     return view('admin.dashboard');
 });
+
+Route::group(['as'=>'admin.', 'prefix' => 'admin', 'namespace'=>'Admin'], function () {
+
+    Route::resource('area', 'AreaController');
+});
+
 
 

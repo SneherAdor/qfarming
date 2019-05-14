@@ -3,7 +3,7 @@
         <!-- logo start -->
         <div class="page-logo">
             <a href="index.html">
-            <img alt="" src="assets/img/logo.png">
+            <img alt="" src="{{ asset('admin/assets/img/logo.png')}}">
             <span class="logo-default" >Smile</span> </a>
         </div>
         <!-- logo end -->
@@ -30,23 +30,23 @@
             <ul class="nav navbar-nav pull-right">
                 <!-- start language menu -->
                 <li class="dropdown language-switch">
-                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="assets/img/flags/gb.png" class="position-left" alt=""> English <span class="fa fa-angle-down"></span>
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="{{ asset('admin/assets/img/flags/gb.png')}}" class="position-left" alt=""> English <span class="fa fa-angle-down"></span>
                     </a>
                     <ul class="dropdown-menu animated tada">
                         <li>
-                            <a class="deutsch"><img src="assets/img/flags/de.png" alt=""> Deutsch</a>
+                            <a class="deutsch"><img src="{{ asset('admin/assets/img/flags/de.png')}}" alt=""> Deutsch</a>
                         </li>
                         <li>
-                            <a class="ukrainian"><img src="assets/img/flags/ua.png" alt=""> Українська</a>
+                            <a class="ukrainian"><img src="{{ asset('admin/assets/img/flags/ua.png')}}" alt=""> Українська</a>
                         </li>
                         <li>
-                            <a class="english"><img src="assets/img/flags/gb.png" alt=""> English</a>
+                            <a class="english"><img src="{{ asset('admin/assets/img/flags/gb.png')}}" alt=""> English</a>
                         </li>
                         <li>
-                            <a class="espana"><img src="assets/img/flags/es.png" alt=""> España</a>
+                            <a class="espana"><img src="{{ asset('admin/assets/img/flags/es.png')}}" alt=""> España</a>
                         </li>
                         <li>
-                            <a class="russian"><img src="assets/img/flags/ru.png" alt=""> Русский</a>
+                            <a class="russian"><img src="{{ asset('admin/assets/img/flags/ru.png')}}" alt=""> Русский</a>
                         </li>
                     </ul>
                 </li>
@@ -133,7 +133,7 @@
                                 <li>
                                     <a href="#">
                                         <span class="photo">
-                                            <img src="assets/img/user/user2.jpg" class="img-circle" alt=""> </span>
+                                            <img src="{{ asset('admin/assets/img/user/user2.jpg')}}" class="img-circle" alt=""> </span>
                                         <span class="subject">
                                             <span class="from"> Sarah Smith </span>
                                             <span class="time">Just Now </span>
@@ -144,7 +144,7 @@
                                 <li>
                                     <a href="#">
                                         <span class="photo">
-                                            <img src="assets/img/user/user3.jpg" class="img-circle" alt=""> </span>
+                                            <img src="{{ asset('admin/assets/img/user/user3.jpg')}}" class="img-circle" alt=""> </span>
                                         <span class="subject">
                                             <span class="from"> John Deo </span>
                                             <span class="time">16 mins </span>
@@ -155,7 +155,7 @@
                                 <li>
                                     <a href="#">
                                         <span class="photo">
-                                            <img src="assets/img/user/user1.jpg" class="img-circle" alt=""> </span>
+                                            <img src="{{ asset('admin/assets/img/user/user1.jpg')}}" class="img-circle" alt=""> </span>
                                         <span class="subject">
                                             <span class="from"> Rajesh </span>
                                             <span class="time">2 hrs </span>
@@ -166,7 +166,7 @@
                                 <li>
                                     <a href="#">
                                         <span class="photo">
-                                            <img src="assets/img/user/user8.jpg" class="img-circle" alt=""> </span>
+                                            <img src="{{ asset('admin/assets/img/user/user8.jpg')}}" class="img-circle" alt=""> </span>
                                         <span class="subject">
                                             <span class="from"> Lina Smith </span>
                                             <span class="time">40 mins </span>
@@ -177,7 +177,7 @@
                                 <li>
                                     <a href="#">
                                         <span class="photo">
-                                            <img src="assets/img/user/user5.jpg" class="img-circle" alt=""> </span>
+                                            <img src="{{ asset('admin/assets/img/user/user5.jpg')}}" class="img-circle" alt=""> </span>
                                         <span class="subject">
                                             <span class="from"> Jacob Ryan </span>
                                             <span class="time">46 mins </span>
@@ -196,7 +196,7 @@
                     <!-- start manage user dropdown -->
                     <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                        <img alt="" class="img-circle " src="assets/img/dp.jpg" />
+                        <img alt="" class="img-circle " src="{{ asset('admin/assets/img/dp.jpg')}}" />
                         <span class="username username-hide-on-mobile"> Kiran </span>
                         <i class="fa fa-angle-down"></i>
                     </a>
