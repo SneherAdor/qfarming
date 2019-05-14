@@ -39,10 +39,23 @@
 
     <!-- toastr js -->
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+
+    {{-- PAGE LOADER CSS --}}
+
+    <link href="{{ asset('admin/assets/css/pageloader/preloader.min.css') }} " rel="stylesheet" type="text/css" />
     
     @stack('css')
 
 </head>
+
+{{-- START PAGE LOADER --}}
+    <div id="preloader">
+            <div class="canvas">
+                <img src="{{ asset('admin/assets/img/qbytsoft_logo.png') }}" alt="logo" class="loader-logo">
+                <div class="spinner"></div>   
+            </div>
+        </div>
+{{-- END PAGE LOADER --}}
  <!-- END HEAD -->
 <body class="page-header-fixed sidemenu-closed-hidelogo page-content-white white-sidebar-color logo-green header-green">
     <div class="page-wrapper">
@@ -110,6 +123,16 @@
  <script src="{{ asset('admin/assets/plugins/summernote/summernote.min.js') }} " ></script>
  <script src="{{ asset('admin/assets/js/pages/summernote/summernote-data.js') }} " ></script>
  <!-- end js include path -->
+
+ {{-- PAGE LOADER JS SCRIPT START --}}
+<script src="{{ asset('admin/assets/js/pageloader/preloader.min.js') }}"></script>
+        <script>
+            $(window).on("load", function () {
+            $(".loader").fadeOut();
+            $("#preloader").delay(350).fadeOut("slow");
+            });
+        </script>
+ {{-- PAGE LOADER JS SCRIPT END --}}
 
 <!-- toastr js -->
  <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
