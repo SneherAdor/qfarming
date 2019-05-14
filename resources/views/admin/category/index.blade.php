@@ -23,7 +23,7 @@
                     <a href="{{ route('admin.category.create') }}" id="addRow1" class="btn btn-primary">
                         Add New <i style="color:white;" class="fa fa-plus"></i>
                     </a>
-                    
+                    <span class="btn btn-primary ml-3"> {{ $categories->count() }} </span>
                 </div>
                 <div class="btn-group pull-right">
                         <button class="btn deepPink-bgcolor  btn-outline dropdown-toggle" data-toggle="dropdown">Tools
@@ -46,7 +46,7 @@
                     </div>
             <div class="card card-topline-red">
                 <div class="card-head">
-                    <header>ALL - CATEGORIES  <span class="btn btn-primary ml-3"> {{ $categories->count() }} </span></header>
+                    <header>ALL - CATEGORIES </header>
                     <div class="tools">
                         <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
                         <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>

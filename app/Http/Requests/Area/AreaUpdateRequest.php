@@ -4,7 +4,7 @@ namespace App\Http\Requests\Area;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AreaStoreRequest extends FormRequest
+class AreaUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class AreaStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'area' => 'required|unique:areas,name'
+            'area' => 'required'
         ];
     }
 }

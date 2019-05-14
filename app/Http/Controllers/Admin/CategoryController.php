@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use Brian2694\Toastr\Facades\Toastr;
+use App\Http\Requests\Category\CategoryStoreRequest;
+use App\Http\Requests\Category\CategoryUpdateRequest;
 
 class CategoryController extends Controller
 {
@@ -39,18 +41,20 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryStoreRequest $request)
     {
-        $this->validate($request, [
-            'category' => 'required'
+        /* category created */
+        $category = Category::create([
+            'name' => $request->category,
+            'slug' => str_slug($request->category),
         ]);
-
-        $category = new Category();
-        $category->name = $request->category;
-        $category->slug = str_slug($request->category);
-        $category->save();
-        Toastr::success('Category Successfully Inserted', 'Success');
-        return redirect()->route('admin.category.index');
+        
+        if($category) {
+            Toastr::success('Category Successfully Inserted', 'Success');
+            return redirect()->route('admin.category.index');
+        }
+        abort(404);
+       
     }
 
     /**
@@ -82,18 +86,21 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(CategoryUpdateRequest $request, Category $category)
     {
-
-        $this->validate($request, [
-            'category' => 'required'
+        /* update category */
+        $resultCategory = $category->update([
+            'name'  => $request->category,
+            'slug'  => str_slug($request->category),
         ]);
 
-        $category->name = $request->category;
-        $category->slug = str_slug($request->category);
-        $category->save();
-        Toastr::success('Category Successfully Updated', 'Success');
-        return redirect()->route('admin.category.index');
+        /* check and toastr message */
+        if($resultCategory) {
+            Toastr::success('Category Successfully Updated', 'Success');
+            return redirect()->route('admin.category.index');
+        }
+        abort(404);
+        
     }
 
     /**

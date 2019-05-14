@@ -6,7 +6,7 @@ return [
         "debug" => false,
         "newestOnTop" => true,
         "progressBar" => true,
-        "positionClass" => "toast-top-center",
+        "positionClass" => "toast-bottom-center",
         "preventDuplicates" => false,
         "onclick" => null,
         "showDuration" => "400",
