@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Area;
 use Brian2694\Toastr\Facades\Toastr;
+use App\Http\Requests\Area\AreaStoreRequest;
 
 class AreaController extends Controller
 {
@@ -38,18 +39,23 @@ class AreaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AreaStoreRequest $request)
     {
-        $this->validate($request, [
-            'area' => 'required'
+        /*** 
+        *  Store Area
+        */
+        $area = Area::create([
+            'name'  => $request->area,
+            'slug'  => str_slug($request->slug)
         ]);
-
-        $area = new Area();
-        $area->name = $request->area;
-        $area->slug = str_slug($request->area);
-        $area->save();
-        Toastr::success('Area Successfully Inserted', 'Success');
-        return redirect()->route('admin.area.index');
+    
+        if($area)
+        {
+            Toastr::success('Area Successfully Inserted', 'Success');
+            return redirect()->route('admin.area.index');
+        }
+        abort(403);
+        
     }
 
     /**
