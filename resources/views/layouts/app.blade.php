@@ -144,7 +144,7 @@
         toastr["error"]("{{ $error }}", 'Error', {
         "closeButton" : true,
         "progressBar" : true,
-        "positionClass": "toast-top-center",
+        "positionClass": "toast-bottom-center",
         });
         @endforeach
     @endif

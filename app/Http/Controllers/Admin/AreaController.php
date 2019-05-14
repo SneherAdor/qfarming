@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Area;
 use Brian2694\Toastr\Facades\Toastr;
 use App\Http\Requests\Area\AreaStoreRequest;
+use App\Http\Requests\Area\AreaUpdateRequest;
 
 class AreaController extends Controller
 {
@@ -41,20 +42,19 @@ class AreaController extends Controller
      */
     public function store(AreaStoreRequest $request)
     {
-        /*** 
-        *  Store Area
-        */
+        //  store area
         $area = Area::create([
             'name'  => $request->area,
             'slug'  => str_slug($request->slug)
         ]);
-    
+        
+        // check area and toast message
         if($area)
         {
             Toastr::success('Area Successfully Inserted', 'Success');
             return redirect()->route('admin.area.index');
         }
-        abort(403);
+        abort(404);
         
     }
 
@@ -88,19 +88,22 @@ class AreaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AreaUpdateRequest $request, $id)
     {
+        /* update Area */
         $area = Area::findOrFail($id);
-
-        $this->validate($request, [
-            'area' => 'required'
+        $resutArea = $area->update([
+            'name' => $request->area,
+            'slug' => str_slug($request->area),
         ]);
 
-        $area->name = $request->area;
-        $area->slug = str_slug($request->area);
-        $area->save();
-        Toastr::success('Area Successfully Updated', 'Success');
-        return redirect()->route('admin.area.index');
+        //check and toast message
+        if($resutArea){
+            Toastr::success('Area Successfully Updated', 'Success');
+            return redirect()->route('admin.area.index');
+        }
+        abort(404);
+        
     }
 
     /**

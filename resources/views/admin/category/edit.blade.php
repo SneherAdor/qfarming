@@ -15,7 +15,7 @@
             
         </div>
     </div>
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-md-6 col-sm-6">
             <div class="card card-box">
                 <div class="card-head">
