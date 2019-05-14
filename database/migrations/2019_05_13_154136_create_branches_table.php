@@ -17,6 +17,7 @@ class CreateBranchesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('area_id')->unsigned()->index();
             $table->string('name')->unique();
+            $table->string('slug');
             $table->timestamps();
         });
     }

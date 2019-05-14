@@ -23,6 +23,7 @@ Route::get('admin/dashboard', function () {
 Route::group(['as'=>'admin.', 'prefix' => 'admin', 'namespace'=>'Admin'], function () {
 
     Route::resource('area', 'AreaController');
+    Route::resource('category', 'CategoryController');
 });
 
 

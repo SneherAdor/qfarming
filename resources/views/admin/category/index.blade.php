@@ -3,7 +3,7 @@
 ?>
 @extends('layouts.app')
 
-@section('title', 'Area')
+@section('title', 'Category')
 
 @push('css')
     <!-- data tables -->
@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col-md-12">
                 <div class="btn-group">
-                    <a href="{{ route('admin.area.create') }}" id="addRow1" class="btn btn-primary">
+                    <a href="{{ route('admin.category.create') }}" id="addRow1" class="btn btn-primary">
                         Add New <i style="color:white;" class="fa fa-plus"></i>
                     </a>
                     
@@ -46,7 +46,7 @@
                     </div>
             <div class="card card-topline-red">
                 <div class="card-head">
-                    <header>ALL - AREA's  <span class="btn btn-primary ml-3"> {{ $areas->count() }} </span></header>
+                    <header>ALL - CATEGORIES  <span class="btn btn-primary ml-3"> {{ $categories->count() }} </span></header>
                     <div class="tools">
                         <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
                         <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
@@ -74,20 +74,20 @@
                         </thead>
                         <tbody>
 
-                            @foreach ($areas as $key=>$area)
+                            @foreach ($categories as $key=>$category)
                                 <tr class="odd gradeX">
                                     <td> {{ $key+1 }} </td>
-                                    <td>{{ $area->name }}</td>
-                                    <td>{{ $area->created_at->toDayDateTimeString() }}</td>
+                                    <td>{{ $category->name }}</td>
+                                    <td>{{ $category->created_at->toDayDateTimeString() }}</td>
                                     <td>
-                                        <a  class="waves-effect btn btn-primary" href="{{ route('admin.area.edit', $area->id) }}"><i class="material-icons">edit</i></a>
+                                        <a  class="waves-effect btn btn-primary" href="{{ route('admin.category.edit', $category->id) }}"><i class="material-icons">edit</i></a>
                                         
                                         <button type="submit" class="waves-effect btn deepPink-bgcolor"
-                                        onclick="deleteTag({{$area->id}})">
+                                        onclick="deleteCategory({{$category->id}})">
                                         <i class="material-icons">delete</i>
                                         </button>
     
-                                        <form id="delete-form-{{$area->id}}" action="{{ route('admin.area.destroy', $area->id) }}" method="post" style="display:none;">
+                                        <form id="delete-form-{{$category->id}}" action="{{ route('admin.category.destroy', $category->id) }}" method="post" style="display:none;">
                                             @csrf
                                             @method("DELETE")
                                         </form>
@@ -113,7 +113,7 @@
 
     <script type="text/javascript">
     
-    function deleteTag(id) {
+    function deleteCategory(id) {
 
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
@@ -141,7 +141,7 @@
             ) {
                 swalWithBootstrapButtons.fire(
                 'Cancelled',
-                'Your Area name is safe :)',
+                'Your Category name is safe :)',
                 'error'
                 )
             }
