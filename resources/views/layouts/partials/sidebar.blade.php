@@ -14,36 +14,36 @@
                         </div>
                         <div class="pull-left info">
                             <p> Kiran Patel</p>
-                            <a href="#"><i class="fa fa-circle user-online"></i><span class="txtOnline"> Online</span></a>
+                            <a href="#"><i class="fa fa-circle user-online"></i><span class="txtOnline"> @lang('dashboard.online')</span></a>
                         </div>
                     </div>
                 </li>
                 <li class="nav-item start {{ Request::is('admin/dashboard') ? 'active' : '' }}">
                     <a href="dashboard" class="nav-link nav-toggle">
                         <i class="material-icons">dashboard</i>
-                        <span class="title">Dashboard</span>
+                        <span class="title">@lang('dashboard.dashboard')</span>
                         <span class="selected"></span>
                         <span class="arrow open"></span>
                     </a>
                 </li>
                 <li class="nav-item {{ Request::is('admin/area') ? 'active' : '' }}">
                     <a href="{{ route('admin.area.index') }}" class="nav-link nav-toggle"> <i class="material-icons">event</i>
-                        <span class="title">Area</span> 
+                        <span class="title">@lang('dashboard.area')</span> 
                     </a>
                 </li>
                 <li class="nav-item {{ Request::is('admin/branch') ? 'active' : '' }}">
                     <a href="{{ route('admin.branch.index') }}" class="nav-link nav-toggle"> <i class="material-icons">event</i>
-                        <span class="title">Branch</span> 
+                        <span class="title">@lang('dashboard.branch')</span> 
                     </a>
                 </li>
                 <li class="nav-item {{ Request::is('admin/category') ? 'active' : '' }}">
                     <a href="{{ route('admin.category.index') }}" class="nav-link nav-toggle"> <i class="material-icons">apps</i>
-                        <span class="title">Category</span> 
+                        <span class="title">@lang('dashboard.category')</span> 
                     </a>
                 </li>
                 <li class="nav-item {{ Request::is('admin/sub-category') ? 'active' : '' }}">
                     <a href="{{ route('admin.sub-category.index') }}" class="nav-link nav-toggle"> <i class="material-icons">apps</i>
-                        <span class="title">Sub-Category</span> 
+                        <span class="title">@lang('dashboard.sub-category')</span> 
                     </a>
                 </li>
                 <li class="nav-item">

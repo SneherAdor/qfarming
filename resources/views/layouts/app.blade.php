@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 <!-- BEGIN HEAD -->
 <head>
     <meta charset="utf-8" />
@@ -54,7 +54,7 @@
     <div id="preloader">
         <div class="canvas">
             <img src="{{ asset('admin/assets/img/qbytsoft_logo.png') }}" alt="logo" class="loader-logo">
-            <img src="{{ asset('admin/assets/img/Preloader_3.gif') }}" alt="logo" class="loader-logo">
+            <img src="{{ asset('admin/assets/img/Preloader_fan.gif') }}" alt="logo" class="loader-logo">
             {{-- <div class="spinner"></div>    --}}
         </div>
     </div>
