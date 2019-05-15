@@ -36,6 +36,11 @@
                         <span class="title">Category</span> 
                     </a>
                 </li>
+                <li class="nav-item {{ Request::is('admin/sub-category') ? 'active' : '' }}">
+                    <a href="{{ route('admin.sub-category.index') }}" class="nav-link nav-toggle"> <i class="material-icons">apps</i>
+                        <span class="title">Sub-Category</span> 
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="event.html" class="nav-link nav-toggle"> <i class="material-icons">event</i>
                         <span class="title">Event Management</span> 

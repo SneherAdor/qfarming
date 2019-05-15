@@ -50,6 +50,15 @@
 
  <!-- END HEAD -->
 <body class="page-header-fixed sidemenu-closed-hidelogo page-content-white white-sidebar-color logo-green header-green">
+    {{-- START PAGE LOADER --}}
+    <div id="preloader">
+        <div class="canvas">
+            <img src="{{ asset('admin/assets/img/qbytsoft_logo.png') }}" alt="logo" class="loader-logo">
+            <img src="{{ asset('admin/assets/img/Preloader_3.gif') }}" alt="logo" class="loader-logo">
+            {{-- <div class="spinner"></div>    --}}
+        </div>
+    </div>
+{{-- END PAGE LOADER --}}
     <div class="page-wrapper">
         <!-- start header -->
         @include('layouts.partials.topbar')
@@ -82,16 +91,6 @@
 
 
     </div>
-{{-- START PAGE LOADER --}}
-    <div id="preloader">
-            <div class="canvas">
-                <img src="{{ asset('admin/assets/img/qbytsoft_logo.png') }}" alt="logo" class="loader-logo">
-                <div class="spinner"></div>   
-            </div>
-        </div>
-{{-- END PAGE LOADER --}}
-
-
  <!-- start js include path -->
  
 

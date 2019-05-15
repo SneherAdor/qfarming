@@ -3,7 +3,7 @@
 ?>
 @extends('layouts.app')
 
-@section('title', 'Area')
+@section('title', 'Sub - Category')
 
 @push('css')
     <!-- data tables -->
@@ -20,10 +20,10 @@
     <div class="row">
         <div class="col-md-12">
                 <div class="btn-group">
-                    <a href="{{ route('admin.area.create') }}" id="addRow1" class="btn btn-primary">
+                    <a href="{{ route('admin.sub-category.create') }}" id="addRow1" class="btn btn-primary">
                         Add New <i style="color:white;" class="fa fa-plus"></i>
                     </a>
-                    <span class="btn btn-primary ml-3"> {{ $areas->count() }} </span>
+                    <span class="btn btn-primary ml-3"> {{ $subcategories->count() }} </span>
                 </div>
                 <div class="btn-group pull-right">
                         <button class="btn deepPink-bgcolor  btn-outline dropdown-toggle" data-toggle="dropdown">Tools
@@ -46,7 +46,7 @@
                     </div>
             <div class="card card-topline-red">
                 <div class="card-head">
-                    <header>ALL - AREA's </header>
+                    <header>ALL  SUB-CATEGORIES </header>
                     <div class="tools">
                         <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
                         <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
@@ -66,7 +66,7 @@
                         <thead>
                             <tr>
                                 
-                                <th> Serila </th>
+                                <th> Serial </th>
                                 <th> Name </th>
                                 <th> Created </th>
                                 <th> Actions </th>
@@ -74,20 +74,20 @@
                         </thead>
                         <tbody>
 
-                            @foreach ($areas as $key=>$area)
+                            @foreach ($subcategories as $key=>$subcategory)
                                 <tr class="odd gradeX">
                                     <td> {{ $key+1 }} </td>
-                                    <td>{{ $area->name }}</td>
-                                    <td>{{ $area->created_at->toDayDateTimeString() }}</td>
+                                    <td>{{ $subcategory->name }}</td>
+                                    <td>{{ $subcategory->created_at->toDayDateTimeString() }}</td>
                                     <td>
-                                        <a  class="waves-effect  btn btn-primary" href="{{ route('admin.area.edit', $area->id) }}"><i class="material-icons">edit</i></a>
+                                        <a  class="waves-effect btn btn-primary" href="{{ route('admin.sub-category.edit', $subcategory->id) }}"><i class="material-icons">edit</i></a>
                                         
                                         <button type="submit" class="waves-effect btn deepPink-bgcolor"
-                                        onclick="deleteTag({{$area->id}})">
+                                        onclick="deleteSubCategory({{$subcategory->id}})">
                                         <i class="material-icons">delete</i>
                                         </button>
     
-                                        <form id="delete-form-{{$area->id}}" action="{{ route('admin.area.destroy', $area->id) }}" method="post" style="display:none;">
+                                        <form id="delete-form-{{$subcategory->id}}" action="{{ route('admin.sub-category.destroy', $subcategory->id) }}" method="post" style="display:none;">
                                             @csrf
                                             @method("DELETE")
                                         </form>
@@ -113,7 +113,7 @@
 
     <script type="text/javascript">
     
-    function deleteTag(id) {
+    function deleteSubCategory(id) {
 
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
@@ -141,7 +141,7 @@
             ) {
                 swalWithBootstrapButtons.fire(
                 'Cancelled',
-                'Your Area name is safe :)',
+                'Your SubCategory name is safe :)',
                 'error'
                 )
             }

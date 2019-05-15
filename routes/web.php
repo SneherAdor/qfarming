@@ -24,6 +24,7 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'namespace'=>'Admin'], functi
 
     Route::resource('area', 'AreaController');
     Route::resource('category', 'CategoryController');
+    Route::resource('sub-category', 'SubCategoryController');
 });
 
 

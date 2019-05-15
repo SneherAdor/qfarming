@@ -18,7 +18,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6 col-sm-6">
             <div class="card card-box">
-                <div class="card-head">
+                <div class="card-head text-white " style="background-color:#3FCC7E;">
                     <header>Category</header>
                 </div>
                 <div class="card-body " id="bar-parent">
