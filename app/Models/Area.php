@@ -10,4 +10,8 @@ class Area extends Model
         'name',
         'slug'
     ];
+
+    public function branches() {
+        return $this->hasMany(Branch::class);
+    }
 }

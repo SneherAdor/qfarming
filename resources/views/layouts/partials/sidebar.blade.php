@@ -31,6 +31,11 @@
                         <span class="title">Area</span> 
                     </a>
                 </li>
+                <li class="nav-item {{ Request::is('admin/branch') ? 'active' : '' }}">
+                    <a href="{{ route('admin.branch.index') }}" class="nav-link nav-toggle"> <i class="material-icons">event</i>
+                        <span class="title">Branch</span> 
+                    </a>
+                </li>
                 <li class="nav-item {{ Request::is('admin/category') ? 'active' : '' }}">
                     <a href="{{ route('admin.category.index') }}" class="nav-link nav-toggle"> <i class="material-icons">apps</i>
                         <span class="title">Category</span> 
