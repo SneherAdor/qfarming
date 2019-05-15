@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>403 Error</title>
+  <title>500 Error</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
@@ -17,13 +17,12 @@
 
   <div class="wrapper">
    <h1 class="oops">Oops!</h1>
-   <p class="info">This is a forbidden area, go back to your area!</p>
+   <p class="info">Looks like we're having some internal issues. Come back later!</p>
    <br />
    
-   <img style="max-width: 18%" src="{{ asset('errors/img/goback.gif') }}" alt="Kitty" />
+   <img style="max-width: 20%;" src="{{ asset('errors/img/qiBoeyLgT.gif') }}" alt="Kitty" />
 
 </div>
- <a href="{{ url('/') }}" class="button"><i class="fa fa-angle-left"></i>Go Home</a>
   
   
 

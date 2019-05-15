@@ -28,3 +28,11 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'namespace'=>'Admin'], functi
 
 
 
+/*For checking errors page  START*/
+
+Route::get('401', function (){ return view('errors.401'); });
+Route::get('403', function (){ return view('errors.403'); });
+Route::get('404', function (){ return view('errors.404'); });
+Route::get('500', function (){ return view('errors.500'); });
+
+/*For checking errors page  END*/
