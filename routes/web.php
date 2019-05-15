@@ -38,3 +38,10 @@ Route::get('404', function (){ return view('errors.404'); });
 Route::get('500', function (){ return view('errors.500'); });
 
 /*For checking errors page  END*/
+
+/*Language route START*/
+Route::get('locale/{locale}', function ($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+});
+/*Language route END*/

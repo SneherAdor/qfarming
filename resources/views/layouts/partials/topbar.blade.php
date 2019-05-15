@@ -4,7 +4,7 @@
         <div class="page-logo">
             <a href="index.html">
             <img alt="" src="{{ asset('admin/assets/img/logo.png')}}">
-            <span class="logo-default" >Smile</span> </a>
+            <span class="logo-default" >@lang('dashboard.smile')</span> </a>
         </div>
         <!-- logo end -->
         <ul class="nav navbar-nav navbar-left in">
@@ -12,7 +12,7 @@
         </ul>
             <form class="search-form-opened" action="#" method="GET">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search..." name="query">
+                <input type="text" class="form-control" placeholder="@lang('dashboard.search')" name="query">
                 <span class="input-group-btn">
                     <a href="javascript:;" class="btn submit">
                         <i class="icon-magnifier"></i>
@@ -30,23 +30,14 @@
             <ul class="nav navbar-nav pull-right">
                 <!-- start language menu -->
                 <li class="dropdown language-switch">
-                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="{{ asset('admin/assets/img/flags/gb.png')}}" class="position-left" alt=""> English <span class="fa fa-angle-down"></span>
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> {{-- <img src="{{ asset('admin/assets/img/flags/gb.png')}}" class="position-left" alt=""> --}} @lang('dashboard.language')<span class="fa fa-angle-down"></span>
                     </a>
                     <ul class="dropdown-menu animated tada">
                         <li>
-                            <a class="deutsch"><img src="{{ asset('admin/assets/img/flags/de.png')}}" alt=""> Deutsch</a>
+                            <a href="{{ url('locale/bn') }}" class="deutsch"><img src="{{ asset('admin/assets/img/flags/bd.png')}}" alt="">@lang('dashboard.bangla')</a>
                         </li>
                         <li>
-                            <a class="ukrainian"><img src="{{ asset('admin/assets/img/flags/ua.png')}}" alt=""> Українська</a>
-                        </li>
-                        <li>
-                            <a class="english"><img src="{{ asset('admin/assets/img/flags/gb.png')}}" alt=""> English</a>
-                        </li>
-                        <li>
-                            <a class="espana"><img src="{{ asset('admin/assets/img/flags/es.png')}}" alt=""> España</a>
-                        </li>
-                        <li>
-                            <a class="russian"><img src="{{ asset('admin/assets/img/flags/ru.png')}}" alt=""> Русский</a>
+                            <a href="{{ url('locale/en') }}" class="english"><img src="{{ asset('admin/assets/img/flags/gb.png')}}" alt=""> English</a>
                         </li>
                     </ul>
                 </li>
