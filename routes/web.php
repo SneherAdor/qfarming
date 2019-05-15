@@ -26,6 +26,7 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'namespace'=>'Admin'], functi
     Route::resource('category', 'CategoryController');
     Route::resource('sub-category', 'SubCategoryController');
     Route::resource('branch', 'BranchController');
+    Route::resource('farmer', 'FarmerController');
 });
 
 

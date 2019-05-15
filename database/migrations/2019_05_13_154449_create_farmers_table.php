@@ -16,7 +16,6 @@ class CreateFarmersTable extends Migration
         Schema::create('farmers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('branch_id')->unsigned()->index();
-            $table->bigInteger('area_id')->unsigned()->index();
             $table->string('name');
             $table->string('phone1')->unique();
             $table->string('phone2')->nullable();
@@ -24,7 +23,7 @@ class CreateFarmersTable extends Migration
             $table->text('address');
             $table->decimal('opening_balance', 15, 2)->default(0);
             $table->dateTime('starting_date');
-            $table->dateTime('ending_date');
+            $table->dateTime('ending_date')->nullable();
             $table->enum('status', ['active', 'inactive', 'disabled'] );
             $table->timestamps();
         });

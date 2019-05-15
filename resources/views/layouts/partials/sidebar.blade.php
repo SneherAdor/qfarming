@@ -19,7 +19,7 @@
                     </div>
                 </li>
                 <li class="nav-item start {{ Request::is('admin/dashboard') ? 'active' : '' }}">
-                    <a href="#" class="nav-link nav-toggle">
+                    <a href="dashboard" class="nav-link nav-toggle">
                         <i class="material-icons">dashboard</i>
                         <span class="title">Dashboard</span>
                         <span class="selected"></span>
