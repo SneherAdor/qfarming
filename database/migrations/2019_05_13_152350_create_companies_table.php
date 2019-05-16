@@ -25,7 +25,7 @@ class CreateCompaniesTable extends Migration
             $table->decimal('opening_balance', 15,2)->default(0);
             $table->dateTime('starting_date');
             $table->dateTime('ending_date');
-            $table->enum('status', ['active', 'inactive', 'disabled']);
+            $table->enum('status', ['active', 'inactive', 'disabled'])->default('active');
             $table->timestamps();
         });
     }

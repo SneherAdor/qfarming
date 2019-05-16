@@ -46,32 +46,16 @@
                         <span class="title">@lang('dashboard.sub-category')</span> 
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="event.html" class="nav-link nav-toggle"> <i class="material-icons">event</i>
-                        <span class="title">Event Management</span> 
+                <li class="nav-item {{ Request::is('admin/company') ? 'active' : '' }}">
+                    <a href="{{ route('admin.company.index') }}" class="nav-link nav-toggle"> <i class="material-icons">apps</i>
+                        <span class="title">Company</span> 
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="event.html" class="nav-link nav-toggle"> <i class="material-icons">event</i>
-                        <span class="title">Event Management</span> 
+                <li class="nav-item {{ Request::is('admin/farmer') ? 'active' : '' }}">
+                    <a href="{{ route('admin.farmer.index') }}" class="nav-link nav-toggle"> <i class="material-icons">apps</i>
+                        <span class="title">Farmer</span> 
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="event.html" class="nav-link nav-toggle"> <i class="material-icons">event</i>
-                        <span class="title">Event Management</span> 
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="event.html" class="nav-link nav-toggle"> <i class="material-icons">event</i>
-                        <span class="title">Event Management</span> 
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="event.html" class="nav-link nav-toggle"> <i class="material-icons">event</i>
-                        <span class="title">Event Management</span> 
-                    </a>
-                </li>
-                
             </ul>
         </div>
     </div>
