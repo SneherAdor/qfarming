@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\SubCategory;
 use Illuminate\Database\Seeder;
+use App\Models\SubCategory;
 
 class SubCategoriesTableSeeder extends Seeder
 {
@@ -10,10 +10,9 @@ class SubCategoriesTableSeeder extends Seeder
      *
      * @return void
      */
-
     public function run()
     {
-        $subcategories = ['broylar', 'Layer', 'Renamysin','Eramin','Vutta','Gom',];
+        $subcategories = ['broylar', 'Layer', 'Renamysin','Eramin','Vutta','Gom'];
 
         foreach ($subcategories as $subcategory) { 
             SubCategory::create([

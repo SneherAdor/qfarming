@@ -1,7 +1,8 @@
 <?php
 
-use App\Models\Branch;
+
 use Illuminate\Database\Seeder;
+use App\Models\Branch;
 
 class BranchesTableSeeder extends Seeder
 {

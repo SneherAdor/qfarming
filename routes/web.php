@@ -11,14 +11,14 @@
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 
-Route::get('admin/dashboard', function () {
-    return view('admin.dashboard');
-});
+
 
 Route::group(['as'=>'admin.', 'prefix' => 'admin', 'namespace'=>'Admin'], function () {
 
@@ -29,6 +29,9 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'namespace'=>'Admin'], functi
     Route::resource('farmer', 'FarmerController');
 });
 
+Route::get('admin/dashboard', function () {
+    return view('admin.dashboard');
+});
 
 
 /*For checking errors page  START*/

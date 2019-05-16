@@ -2,7 +2,7 @@
     <div class="page-header-inner ">
         <!-- logo start -->
         <div class="page-logo">
-            <a href="index.html">
+            <a href="/admin/dashboard">
             <img alt="" src="{{ asset('admin/assets/img/logo.png')}}">
             <span class="logo-default" >@lang('dashboard.smile')</span> </a>
         </div>
