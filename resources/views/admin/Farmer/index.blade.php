@@ -39,7 +39,7 @@
                             </li>
                             <li>
                                 <a href="javascript:;">
-                                    <i class="fa fa-file-excel-o"></i> Export to Excel </a>
+                                <i class="fa fa-file-excel-o"></i> Export to Excel </a>
                             </li>
                         </ul>
                     </div>
@@ -76,7 +76,6 @@
                                 <th> Starting Date </th>
                                 <th> Ending Date </th>
                                 <th> Status </th>
-                                <th> Created </th>
                                 <th> Action </th>
                             </tr>
                         </thead>
@@ -92,10 +91,9 @@
                                     <td>{{ $farmer->email }}</td>
                                     <td>{{ str_limit($farmer->address, 15) }}</td>
                                     <td>{{ $farmer->opening_balance }}</td>
-                                    <td>{{ $farmer->starting_date }}</td>
-                                    <td>{{ $farmer->ending_date }}</td>
+                                    <td>{{ Carbon::parse($farmer->starting_date)->toDayDateTimeString() }}</td>
+                                    <td>{{ Carbon::parse($farmer->ending_date)->toDayDateTimeString() }}</td>
                                     <td>{{ $farmer->status }}</td>
-                                    <td>{{ $farmer->created_at->toDayDateTimeString() }}</td> 
                                     <td>
                                         <a  class="waves-effect btn btn-primary" href="{{ route('admin.farmer.edit', $farmer->id) }}"><i class="material-icons">edit</i></a>
                                         

@@ -19,7 +19,7 @@
                     </div>
                 </li>
                 <li class="nav-item start {{ Request::is('admin/dashboard') ? 'active' : '' }}">
-                    <a href="dashboard" class="nav-link nav-toggle">
+                    <a href="/admin/dashboard" class="nav-link nav-toggle">
                         <i class="material-icons">dashboard</i>
                         <span class="title">@lang('dashboard.dashboard')</span>
                         <span class="selected"></span>
@@ -46,9 +46,20 @@
                         <span class="title">@lang('dashboard.sub-category')</span> 
                     </a>
                 </li>
+<<<<<<< HEAD
                 <li class="nav-item {{ Request::is('admin/company') ? 'active' : '' }}">
                     <a href="{{ route('admin.company.index') }}" class="nav-link nav-toggle"> <i class="material-icons">apps</i>
                         <span class="title">Company</span> 
+=======
+                <li class="nav-item {{ Request::is('admin/farmer') ? 'active' : '' }}">
+                    <a href="{{ route('admin.farmer.index') }}" class="nav-link nav-toggle"> <i class="material-icons">apps</i>
+                        <span class="title">@lang('dashboard.farmer')</span> 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="event.html" class="nav-link nav-toggle"> <i class="material-icons">event</i>
+                        <span class="title">Event Management</span> 
+>>>>>>> dd8d4c7ca1824553851233334546c3348f98d2c4
                     </a>
                 </li>
                 <li class="nav-item {{ Request::is('admin/farmer') ? 'active' : '' }}">

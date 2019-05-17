@@ -3,7 +3,7 @@
 return [
     'welcome'       => 'Welcome to our application',
     'dashboard'     => 'Dashboard',
-    'bangla'		=> ' Bangla',
+    'bangla'		=> 'Bangla',
     'language'		=> 'Language',
     'search'		=> 'Search...',
     'home'			=> 'Home',
@@ -13,6 +13,7 @@ return [
     'branch'		=> 'Branch',
     'category'		=> 'Category',
     'sub-category'	=> 'Sub-Category',
+    'farmer'    	=> 'Farmer',
 ];
 
 
