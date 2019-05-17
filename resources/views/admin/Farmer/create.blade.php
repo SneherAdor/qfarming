@@ -1,7 +1,7 @@
 <?php
     use Carbon\Carbon;
 ?>
-@extends('layouts.app')
+@extends('template.app')
 
 @section('title', 'Create - Farmer')
 

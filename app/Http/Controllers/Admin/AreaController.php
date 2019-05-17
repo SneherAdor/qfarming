@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Area;
@@ -47,6 +48,7 @@ class AreaController extends Controller
             'name'  => $request->area,
             'slug'  => str_slug($request->slug)
         ]);
+
         
         // check area and toast message
         if($area)

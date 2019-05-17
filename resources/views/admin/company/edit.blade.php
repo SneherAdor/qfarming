@@ -1,7 +1,7 @@
 <?php
 use Carbon\Carbon;
 ?>
-@extends('layouts.app')
+@extends('template.app')
 @section('title', 'Update - Company')
 @push('css')
 <link href="{{ asset('admin/assets/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }} " rel="stylesheet" media="screen">

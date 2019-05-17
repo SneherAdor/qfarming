@@ -1,155 +1,80 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<!-- BEGIN HEAD -->
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta name="description" content="Responsive Admin Template" />
-    <meta name="author" content="SmartUniversity" />
-    <title>@yield('title')</title>
-    <!-- google font -->
-   
-   
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
-	<!-- icons -->
-    <link href="{{ asset('admin/assets/plugins/simple-line-icons/simple-line-icons.min.css') }} " rel="stylesheet" type="text/css" />
-    <link href="{{ asset('admin/fonts/font-awesome/css/font-awesome.min.css') }} " rel="stylesheet" type="text/css"/>
-	<link href="{{ asset('admin/fonts/material-design-icons/material-icon.css') }} " rel="stylesheet" type="text/css" />
-	<!--bootstrap -->
-	<link href="{{ asset('admin/assets/plugins/bootstrap/css/bootstrap.min.css') }} " rel="stylesheet" type="text/css" />
-	<link href="{{ asset('admin/assets/plugins/summernote/summernote.css') }} " rel="stylesheet">
-    <!-- Material Design Lite CSS -->
-	<link rel="stylesheet" href="{{ asset('admin/assets/plugins/material/material.min.css') }} ">
-	<link rel="stylesheet" href="{{ asset('admin/assets/css/material_style.css') }} ">
-	<!-- animation -->
-	<link href="{{ asset('admin/assets/css/pages/animate_page.css') }} " rel="stylesheet">
-	<!-- inbox style -->
-    <link href="{{ asset('admin/assets/css/pages/inbox.min.css') }} " rel="stylesheet" type="text/css" />
-	<!-- Theme Styles -->
-    
-    <link href="{{ asset('admin/assets/css/plugins.min.css') }} " rel="stylesheet" type="text/css" />
-   
-    <link href="{{ asset('admin/assets/css/theme-color.css') }} " rel="stylesheet" type="text/css" />
-	<!-- favicon -->
-    <link rel="shortcut icon" href="{{ asset('admin/assets/img/favicon.ico') }} " /> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="{{ asset('admin/assets/css/style.css') }} " rel="stylesheet" type="text/css" />
-    <link href="{{ asset('admin/assets/css/responsive.css') }} " rel="stylesheet" type="text/css" />
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- toastr js -->
-    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-    {{-- PAGE LOADER CSS --}}
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <link href="{{ asset('admin/assets/css/pageloader/preloader.css') }} " rel="stylesheet" type="text/css" />
-    
-    @stack('css')
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+<body>
+    <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
- <!-- END HEAD -->
-<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white white-sidebar-color logo-green header-green">
-    {{-- START PAGE LOADER --}}
-    <div id="preloader">
-        <div class="canvas">
-            <img src="{{ asset('admin/assets/img/qbytsoft_logo.png') }}" alt="logo" class="loader-logo">
-            <img src="{{ asset('admin/assets/img/Preloader_fan.gif') }}" alt="logo" class="loader-logo">
-            {{-- <div class="spinner"></div>    --}}
-        </div>
-    </div>
-{{-- END PAGE LOADER --}}
-    <div class="page-wrapper">
-        <!-- start header -->
-        @include('layouts.partials.topbar')
-        <!-- end header -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
 
+                    </ul>
 
-        <!-- start page container -->
-        <div class="page-container">
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
 
-            <!-- start sidebar menu -->
- 			@include('layouts.partials.sidebar')
-            <!-- end sidebar menu -->
-            
-            <!-- start page content -->
-            <div class="page-content-wrapper">
-                <div class="page-content">
-                    @yield('content')
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
                 </div>
             </div>
-            <!-- end page content -->
+        </nav>
 
-        </div>
-        <!-- end page container -->
-
-
-
-        <!-- start footer -->
-        @include('layouts.partials.footer')
-        <!-- end footer -->
-
-
+        <main class="py-4">
+            @yield('content')
+        </main>
     </div>
- <!-- start js include path -->
- 
-
- <script src="{{ asset('admin/assets/plugins/jquery/jquery.min.js') }} " ></script>
- <script src="{{ asset('admin/assets/plugins/popper/popper.min.js') }} " ></script>
- <script src="{{ asset('admin/assets/plugins/jquery-blockui/jquery.blockui.min.js') }} " ></script>
- <script src="{{ asset('admin/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js') }} "></script>
- <!-- bootstrap -->
- <script src="{{ asset('admin/assets/plugins/bootstrap/js/bootstrap.min.js') }} " ></script>
- <script src="{{ asset('admin/assets/plugins/sparkline/jquery.sparkline.min.js') }} " ></script>
- <script src="{{ asset('admin/assets/js/pages/sparkline/sparkline-data.js') }} " ></script>
-
-
-
-
- <!-- Common js-->
- <script src="{{ asset('admin/assets/js/app.js') }} " ></script>
- <script src="{{ asset('admin/assets/js/layout.js') }} " ></script>
- <script src="{{ asset('admin/assets/js/theme-color.js') }} " ></script>
- <!-- material -->
- <script src="{{ asset('admin/assets/plugins/material/material.min.js') }} "></script>
- <!-- animation -->
- <script src="{{ asset('admin/assets/js/pages/ui/animations.js') }} " ></script>
- <!-- chart js -->
- <script src="{{ asset('admin/assets/plugins/chart-js/Chart.bundle.js') }} " ></script>
- <script src="{{ asset('admin/assets/plugins/chart-js/utils.js') }} " ></script>
- <script src="{{ asset('admin/assets/js/pages/chart/chartjs/home-data.js')}} " ></script>
- <!-- summernote -->
- <script src="{{ asset('admin/assets/plugins/summernote/summernote.min.js') }} " ></script>
- <script src="{{ asset('admin/assets/js/pages/summernote/summernote-data.js') }} " ></script>
- <!-- end js include path -->
-
- {{-- PAGE LOADER JS SCRIPT START --}}
-<script src="{{ asset('admin/assets/js/pageloader/preloader.min.js') }}"></script>
-        <script>
-            $(window).on("load", function () {
-            $(".loader").fadeOut();
-            $("#preloader").delay(500).fadeOut("slow");
-            });
-        </script>
- {{-- PAGE LOADER JS SCRIPT END --}}
-
-<!-- toastr js -->
- <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
- {!! Toastr::message() !!}
-
- <script>
-    @if($errors->any())
-        @foreach($errors->all() as $error)
-        toastr["error"]("{{ $error }}", 'Error', {
-        "closeButton" : true,
-        "progressBar" : true,
-        "positionClass": "toast-bottom-center",
-        });
-        @endforeach
-    @endif
-</script>
-
- @stack('js')
-
 </body>
 </html>

@@ -13,8 +13,9 @@
 
 
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function (\Illuminate\Http\Request $request) {
+    $user = $request->user();
+    dd($user);
 });
 
 
@@ -50,3 +51,7 @@ Route::get('locale/{locale}', function ($locale){
     return redirect()->back();
 });
 /*Language route END*/
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
