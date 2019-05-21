@@ -15,13 +15,13 @@
 
 Route::get('/', function (\Illuminate\Http\Request $request) {
     $user = $request->user();
-    dd($user);
+    dump($user->refreshPermissions('delete'));
 });
 
 
 
 
-Route::group(['as'=>'admin.', 'prefix' => 'admin', 'namespace'=>'Admin'], function () {
+Route::group(['as'=>'admin.', 'prefix' => 'admin', 'namespace'=>'Admin','middleware' => 'role:user'], function () {
 
     Route::resource('area', 'AreaController');
     Route::resource('category', 'CategoryController');
