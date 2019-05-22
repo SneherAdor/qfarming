@@ -21,7 +21,8 @@ Route::get('/', function (\Illuminate\Http\Request $request) {
 
 
 
-Route::group(['as'=>'admin.', 'prefix' => 'admin', 'namespace'=>'Admin','middleware' => 'role:user'], function () {
+Route::group(['as'=>'admin.', 'prefix' => 'admin', 'namespace'=>'Admin','middleware' => 'role:admin'], function () {
+
 
     Route::resource('area', 'AreaController');
     Route::resource('category', 'CategoryController');
@@ -31,9 +32,23 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'namespace'=>'Admin','middlew
     Route::resource('company', 'CompanyController');
 });
 
+/* Super Admin route start */
+
+Route::group(['as'=>'super-admin.', 'prefix' => 'super-admin', 'namespace'=>'SuperAdmin'], function () {
+
+    Route::resource('role', 'RoleController');
+    Route::resource('permission', 'PermissionController');
+   
+});
+
+/* Super Admin route end */
+
+
 Route::get('admin/dashboard', function () {
     return view('admin.dashboard');
 });
+
+
 
 
 /*For checking errors page  START*/

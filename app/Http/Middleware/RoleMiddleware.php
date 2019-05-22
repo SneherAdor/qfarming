@@ -18,6 +18,7 @@ class RoleMiddleware
         /*
          * Check the user role
          * */
+        
         if (!$request->user()->hasRole($role))
         {
             abort(404);

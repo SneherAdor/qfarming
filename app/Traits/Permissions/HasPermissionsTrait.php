@@ -123,6 +123,7 @@ trait HasPermissionsTrait
     public function refreshPermissions(...$permissions)
     {
         $this->permissions()->detach();
+        
 
         return $this->givePermissionTo($permissions);
     }
