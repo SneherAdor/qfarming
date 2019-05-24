@@ -3,7 +3,7 @@
 ?>
 @extends('template.app')
 
-@section('title', 'Create - Farmer')
+@section('title', 'Create - User')
 
 @push('css')
    <!--select2-->
@@ -24,16 +24,16 @@
         <div class="col-md-12 col-sm-12">
             <div class="card card-box">
                 <div class="card-head text-white " style="background-color:#3FCC7E;">
-                    <header>Create Farmer</header>
+                    <header>Create User</header>
                 </div>
                 <div class="card-body" id="bar-parent">
-                    <form method="post" action="{{ route('admin.farmer.store') }}">
+                    <form method="post" action="{{ route('admin.user.store') }}">
                         @csrf
                         <div class="row">
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
-                                    <label for="simpleFormEmail">Farmer Name</label>
-                                    <input type="text" name="name" class="form-control" id="simpleFormEmail" placeholder="Enter farmer name" value="{{ old('name') }}">
+                                    <label for="simpleFormEmail">Name</label>
+                                    <input type="text" name="user" class="form-control" id="simpleFormEmail" placeholder="Enter User's name" value="{{ old('user') }}">
                                 </div>
 
                                 <div class="form-group">
@@ -46,13 +46,12 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="simpleFormEmail">Phone</label>
-                                    <input type="text" name="phone1" class="form-control" id="simpleFormEmail" placeholder="Enter farmer phone number" value="{{ old('phone1') }}">
+                                    <label for="simpleFormEmail">Username</label>
+                                    <input type="text" name="username" class="form-control" id="simpleFormEmail" placeholder="Enter Username" value="{{ old('username') }}">
                                 </div>
-
                                 <div class="form-group">
-                                    <label for="simpleFormEmail">Alternative Phone</label>
-                                    <input type="text" name="phone2" class="form-control" id="simpleFormEmail" placeholder="Enter alternaive phone" value="{{ old('phone2') }}">
+                                    <label for="simpleFormEmail">Password</label>
+                                    <input type="password" name="password" class="form-control" id="simpleFormEmail" placeholder="Enter password" >
                                 </div>
                             </div>
 
@@ -60,28 +59,25 @@
                             <div class="col-md-6 col-sm-6">
 
                                 <div class="form-group">
+                                    <label for="simpleFormEmail">Phone</label>
+                                    <input type="text" name="phone1" class="form-control" id="simpleFormEmail" placeholder="Enter User phone number" value="{{ old('phone1') }}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="simpleFormEmail">Alternative Phone</label>
+                                    <input type="text" name="phone2" class="form-control" id="simpleFormEmail" placeholder="Enter alternaive phone" value="{{ old('phone2') }}">
+                                </div>
+                                <div class="form-group">
                                     <label for="simpleFormEmail">Email</label>
-                                    <input type="email" name="email" class="form-control" id="simpleFormEmail" placeholder="Enter farmer email" value="{{ old('email') }}">
+                                    <input type="email" name="email" class="form-control" id="simpleFormEmail" placeholder="Enter User email" value="{{ old('email') }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="simpleFormEmail">Address</label> 
                                     <textarea name="address" id="simpleFormEmail" class="form-control">{{old('address')}}</textarea>
                                 </div>
-                                <div class="form-group">
-                                    <label for="simpleFormEmail">Opening Balance</label>
-                                    <input type="text" name="opening_balance" class="form-control" id="simpleFormEmail" placeholder="Enter farmer opening balance" value="{{ old('opening_balance') }}">
-                                </div>
+                                
 
-                                <div class="form-group">
-                                    <label class="">Starting Date</label>
-                                    <div class="input-group date form_datetime" data-date="{{ Carbon::now() }}" data-date-format="dd MM yyyy HH:ii p" data-link-field="dtp_input1">
-                                        <input class="form-control" size="16" type="text" name="starting_date" value="{{ old('starting_date') }}">
-                                        <span class="input-group-addon ml-2">
-                                            <span class="fa fa-calendar"></span>
-                                        </span>
-                                    </div>
-                                    <input type="hidden" id="dtp_input1" value="" />
-                                </div>
+                                
                             </div>
                         </div>
 
@@ -101,7 +97,7 @@
                             <input type="text" name="status" class="form-control" id="simpleFormEmail" placeholder="Enter farmer status" value="{{ old('status') }}">
                         </div> --}}
                         
-                        <a class="btn deepPink-bgcolor m-t-15 waves-effect" href="{{ route('admin.farmer.index') }}">BACK</a>
+                        <a class="btn deepPink-bgcolor m-t-15 waves-effect" href="{{ route('admin.user.index') }}">BACK</a>
                         <button type="submit" class="btn btn-success m-t-15 waves-effect">SUBMIT</button>
                     </form>
                 </div>

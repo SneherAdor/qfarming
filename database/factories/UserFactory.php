@@ -19,13 +19,16 @@ use Faker\Generator as Faker;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'username' => $faker->userName,
-        'email' => $faker->unique()->safeEmail,
+        'name'      => $faker->name,
+        'branch_id' => rand(1, 5),
+        'username'  => $faker->userName,
+        'email'     => $faker->unique()->safeEmail,
 //        'email_verified_at' => now(),
-        'password' => bcrypt('12345678'), // password
+        'password'  => bcrypt('12345678'), // password
         'phone1'    => $faker->phoneNumber,
         'phone2'    => $faker->phoneNumber,
+        'address'   => $faker->address,
+        'status'    => 'active',
         'remember_token' => Str::random(10),
     ];
 });

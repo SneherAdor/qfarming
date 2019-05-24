@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Farmer;
+namespace App\Http\Requests\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FarmerStoreRequest extends FormRequest
+class UserStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,11 @@ class FarmerStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'           => 'required',
-            'phone1'         => 'required|unique:farmers',
-            'email'          => 'email|unique:farmers',
-            'address'        => 'required',
-            'opening_balance'=> 'required|numeric',
+            'user'         => 'required',
+            'username'     => 'required|max:50unique:users',
+            'email'        => 'required|email|unique:users',
+            'phone1'       => 'required|unique:users',
+            'address'      => 'required',
         ];
     }
 }

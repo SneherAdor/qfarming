@@ -34,7 +34,7 @@
                     </a>
                     <ul class="dropdown-menu animated tada">
                         <li>
-                            <a href="{{ url('locale/bn') }}" class="deutsch"><img src="{{ asset('admin/assets/img/flags/bd.png')}}" alt="">@lang('dashboard.bangla')</a>
+                            <a href="{{ url('locale/bn') }}" class="deutsch"><img src="{{ asset('admin/assets/img/flags/bd.png')}}" alt="">{{ " ".__('dashboard.bangla') }}</a>
                         </li>
                         <li>
                             <a href="{{ url('locale/en') }}" class="english"><img src="{{ asset('admin/assets/img/flags/gb.png')}}" alt=""> English</a>
@@ -188,7 +188,7 @@
                     <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                         <img alt="" class="img-circle " src="{{ asset('admin/assets/img/dp.jpg')}}" />
-                            <span class="username username-hide-on-mobile"> {{ auth()->user()->username }} </span>
+                            <span class="username username-hide-on-mobile"> {{ auth()->user()->name }} </span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default animated jello">

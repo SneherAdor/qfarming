@@ -17,7 +17,6 @@ class RoleMiddleware
     public function handle($request, Closure $next, $role, $permission = null)
     {
         
-        
         if(Auth::guest())
         {
             return redirect()->to('login');
@@ -25,11 +24,16 @@ class RoleMiddleware
         /*
          * Check the user role
          * */
-        
-        if (!$request->user()->hasRole($role))
+        $role = explode('|',$role);
+        foreach($role as $value)
         {
-            abort(404);
+            if ($request->user()->hasRole($value))
+            {
+                return $next($request);
+            }
         }
+        
+        
 
         /*
          * Check the Individual Permission
@@ -38,6 +42,6 @@ class RoleMiddleware
         {
             abort(404);
         }
-        return $next($request);
+        
     }
 }

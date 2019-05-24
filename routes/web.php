@@ -18,17 +18,22 @@ Route::get('/', function (\Illuminate\Http\Request $request) {
     dump($user->refreshPermissions('delete'));
 });
 
+// Route::group(['as'=>'admin.', 'prefix' => 'manager', 'namespace'=>'Admin','middleware' => 'role:manager'], function () {
 
+//     Route::resource('area', 'AreaController');
+    
+// });
 
+Route::group(['as'=>'admin.', 'prefix' => 'admin', 'namespace'=>'Admin','middleware' => ['role:admin|manager|employee,create']], function () {
+    
 
-Route::group(['as'=>'admin.', 'prefix' => 'admin', 'namespace'=>'Admin','middleware' => 'role:admin'], function () {
-
-    Route::resource('area', 'AreaController');
+   Route::resource('area', 'AreaController');
     Route::resource('category', 'CategoryController');
     Route::resource('sub-category', 'SubCategoryController');
     Route::resource('branch', 'BranchController');
     Route::resource('farmer', 'FarmerController');
     Route::resource('company', 'CompanyController');
+    Route::resource('user', 'UserController');
 });
 
 /* Super Admin route start */

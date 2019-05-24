@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name','username', 'email', 'password',
+        'name','username', 'email', 'password','branch_id', 'phone1',
     ];
 
     /**
@@ -38,4 +38,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function branch() {
+        return $this->belongsTo(Branch::class);
+    }
 }

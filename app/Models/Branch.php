@@ -17,4 +17,8 @@ class Branch extends Model
     public function farmer() {
         return $this->hasMany(Farmer::class);
     }
+
+    public function users() {
+        return $this->hasMany(User::class);
+    }
 }
