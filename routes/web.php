@@ -23,7 +23,6 @@ Route::get('/', function (\Illuminate\Http\Request $request) {
 
 Route::group(['as'=>'admin.', 'prefix' => 'admin', 'namespace'=>'Admin','middleware' => 'role:admin'], function () {
 
-
     Route::resource('area', 'AreaController');
     Route::resource('category', 'CategoryController');
     Route::resource('sub-category', 'SubCategoryController');
@@ -46,7 +45,7 @@ Route::group(['as'=>'super-admin.', 'prefix' => 'super-admin', 'namespace'=>'Sup
 
 Route::get('admin/dashboard', function () {
     return view('admin.dashboard');
-});
+})->middleware('role:admin');
 
 
 

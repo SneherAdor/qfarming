@@ -34,7 +34,7 @@
 
                         <div class="form-group">
                             <label>Select Permissions</label>
-                            <select name="permissions[]" class="form-control  select2 " multiple>
+                            <select name="permissions[]" class="form-control select2 " multiple>
                                 @foreach ($permissions as $permission)
                                     <option value="{{ $permission->id }}"
                                         

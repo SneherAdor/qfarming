@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Area;
 use Brian2694\Toastr\Facades\Toastr;
@@ -12,6 +11,7 @@ use App\Http\Requests\Area\AreaUpdateRequest;
 
 class AreaController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -19,10 +19,10 @@ class AreaController extends Controller
      */
     public function index()
     {
-       
-        $areas = Area::latest()->get();
+            $areas = Area::latest()->get();
 
-        return view('admin.area.index', compact('areas'));
+            return view('admin.area.index', compact('areas'));
+        
     }
 
     /**
@@ -32,7 +32,8 @@ class AreaController extends Controller
      */
     public function create()
     {
-        return view('admin.area.create');
+            return view('admin.area.create');
+        
     }
 
     /**

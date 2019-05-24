@@ -83,7 +83,7 @@
                                     
                                     <td>
                                         @foreach ($role->permissions as $rolePermission)
-                                            {{ $rolePermission->name. " -" }}
+                                        <span class="btn" style="background-color: #3fcc7e; color:#fff"> {{ $rolePermission->name }} </span>  
                                         @endforeach
                                     </td>
                                     <td>{{ $role->created_at->toDayDateTimeString() }}</td>

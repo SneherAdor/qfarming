@@ -53,9 +53,9 @@
     {{-- START PAGE LOADER --}}
     <div id="preloader">
         <div class="canvas">
-            <img src="{{ asset('admin/assets/img/qbytsoft_logo.png') }}" alt="logo" class="loader-logo">
-            <img src="{{ asset('admin/assets/img/Preloader_fan.gif') }}" alt="logo" class="loader-logo">
-            {{-- <div class="spinner"></div>    --}}
+            <img src="{{ asset('admin/assets/img/qbytsoft_logo.png') }}"  class="loader-logo">
+            {{-- <img src="{{ asset('admin/assets/img/Preloader_fan.gif') }}"  class="loader-logo"> --}}
+            <div class="spinner"></div>   
         </div>
     </div>
 {{-- END PAGE LOADER --}}

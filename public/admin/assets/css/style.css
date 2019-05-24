@@ -5873,7 +5873,7 @@ fieldset[disabled] .btn.purple:not(.btn-outline):hover {
     border-radius: 2px;
     overflow: hidden;
     position: relative;
-    padding: 8px 14px 7px;
+    padding: 5px 7px 3px;
     /* margin: 0 5px 10px 0; */
 }
 .btn-chatpane .btn,

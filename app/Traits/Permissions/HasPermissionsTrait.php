@@ -5,21 +5,7 @@ use App\Models\{Role,Permission};
 
 trait HasPermissionsTrait
 {
-    /**
-     * @return mixed
-     */
-    public function roles()
-    {
-        return $this->belongsToMany(Role::class,'users_roles');
-    }
-
-    /**
-     * @return mixed
-     */
-    public function permissions()
-    {
-        return $this->belongsToMany(Permission::class,'users_permissions');
-    }
+   
 
     /**
      * @param mixed ...$roles
@@ -68,6 +54,7 @@ trait HasPermissionsTrait
          * */
         foreach ($permission->roles as $role)
         {
+            
             if ($this->roles->contains($role))
             {
                 return true;
@@ -126,6 +113,22 @@ trait HasPermissionsTrait
         
 
         return $this->givePermissionTo($permissions);
+    }
+
+     /**
+     * @return mixed
+     */
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class,'users_roles');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function permissions()
+    {
+        return $this->belongsToMany(Permission::class,'users_permissions');
     }
 
 }

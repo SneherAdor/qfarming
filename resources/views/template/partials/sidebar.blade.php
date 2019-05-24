@@ -13,7 +13,7 @@
                             <img src="{{ asset('admin/assets/img/dp.jpg') }}" class="img-circle user-img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p> Kiran Patel</p>
+                            <p> {{ auth()->user()->name}}</p>
                             <a href="#"><i class="fa fa-circle user-online"></i><span class="txtOnline"> @lang('dashboard.online')</span></a>
                         </div>
                     </div>

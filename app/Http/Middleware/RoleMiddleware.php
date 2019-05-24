@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class RoleMiddleware
 {
@@ -15,6 +16,12 @@ class RoleMiddleware
      */
     public function handle($request, Closure $next, $role, $permission = null)
     {
+        
+        
+        if(Auth::guest())
+        {
+            return redirect()->to('login');
+        }
         /*
          * Check the user role
          * */
